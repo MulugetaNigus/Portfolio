@@ -20,9 +20,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
-const port = 4500;
 
-app.listen(port);
+app.listen(process.env.PORT || 8000);
 mongoose
   .connect( process.env.MONGODB_URI , {
     useNewUrlParser: true,
